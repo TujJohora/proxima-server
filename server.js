@@ -9,6 +9,12 @@ const app = express();
 //VARIABLE FOR PORT 
 const port=process.env.PORT|| 4000;
 
+// middlewares
+app.use((req, res, next) =>{
+    console.log(req.path, req.method);
+    next(); // for getting another next req
+});
+
 
 //routes
 app.get('/',(req,res)=>{
