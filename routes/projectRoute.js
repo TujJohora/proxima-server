@@ -13,7 +13,7 @@ router.get("/",(req, res) =>{
 
 // GET a single project
 
-router.get("/",(req, res) =>{
+router.get("/:id",(req, res) =>{
     res.json({message:"GET a single project"});
     
 });
@@ -24,7 +24,7 @@ router.post("/",(req, res) =>{
 });
 
 // DELETE a project
-router.delete("/",(req, res) =>{
+router.delete("/:id",(req, res) =>{
     res.json({message:"DELETE a project"});
     
 });

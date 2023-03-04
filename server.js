@@ -10,6 +10,7 @@ const app = express();
 const port=process.env.PORT|| 4000;
 
 // middlewares
+app.use(express.json());
 app.use((req, res, next) =>{
     console.log(req.path, req.method);
     next(); // for getting another next req
