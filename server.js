@@ -2,7 +2,7 @@ require("dotenv").config();
 
 //importing express
 const express = require("express");
-
+const projectRoutes = require("./routes/projectRoute");
 // creating express app
 const app = express();
 
@@ -17,9 +17,7 @@ app.use((req, res, next) =>{
 
 
 //routes
-app.get('/',(req,res)=>{
-    res.json({message:"welcome the express app!"});
-});
+app.use("/api/projects", projectRoutes);
 
 //listen for requests
 app.listen(port,()=>{
