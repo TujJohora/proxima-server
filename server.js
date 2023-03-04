@@ -25,15 +25,7 @@ app.use("/api/projects", projectRoutes);
 
 
 // mongodb
-connect(process.env.MONGO_URI).then(() => {
-    // listen for requests
-    app.listen(port, () => {
-      console.log(`connected to mongo and listening on port ${port}`);
-    });
-  })
-  .catch((err) => {
-    console.log(err);
-  });// mongodb
+
   mongoose.set("strictQuery", false); // optional
   mongoose.connect(process.env.MONGO_URI)
     .then(() => {
