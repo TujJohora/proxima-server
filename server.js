@@ -2,6 +2,7 @@ require("dotenv").config();
 
 //importing express
 const express = require("express");
+const mongoose = require("mongoose");
 const projectRoutes = require("./routes/projectRoute");
 // creating express app
 const app = express();
@@ -20,7 +21,16 @@ app.use((req, res, next) =>{
 //routes
 app.use("/api/projects", projectRoutes);
 
-//listen for requests
-app.listen(port,()=>{
-    console.log(`Listening on port ${port}`);
-});
+
+// mongodb
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    // listen for requests
+    app.listen(port, () => {
+      console.log(`connected to mongo and listening on port ${port}`);
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
