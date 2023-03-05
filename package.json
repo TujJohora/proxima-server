@@ -8,6 +8,9 @@
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
+  "engines" : { 
+  "node" : ">=14.20.1" 
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -19,5 +22,6 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.0",
     "validator": "^13.9.0"
+  
   }
 }
