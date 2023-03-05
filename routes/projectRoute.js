@@ -8,12 +8,13 @@ const {
     deleteProject,
   updateProject,
   } = require("../controllers/projectController");
+  const requireAuth = require("../middlewares/requireAuth");
 
   
 // making router
 //R should be capital
 const router = express.Router();
-
+router.use(requireAuth);
 // GET all projects
 router.get("/", getAllProjects);
 
